@@ -18,7 +18,7 @@ const UserSchema =new mongoose.Schema(
 );
 
 UserSchema.methods.generateJwtToken = function(){
-  return jwt.sign({user: this._id.toString()}, "ZomatoApp");
+  return jwt.sign({user: this._id.toString()}, "sahil");
 }
 UserSchema.statics.findEmailAndPhone = async ({email, phoneNumber}) => {
   //check whether the email exists
@@ -49,6 +49,7 @@ UserSchema.pre("save",function(next){
 
 //password isnot modified
   if(!user.isModified("password")) return next();
+
 
 //generating bcrypt salt
   bcrypt.genSalt(8,(error,salt)=> {

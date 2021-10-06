@@ -7,10 +7,9 @@ images:[
   }
 
 ],
+},
 {
   timeStamps:true
-}
-
 });
 
 export const ImageModel= mongoose.model("Images",ImageSchema);

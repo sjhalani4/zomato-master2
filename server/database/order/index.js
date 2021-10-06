@@ -1,12 +1,12 @@
 import mongoose from "mongoose";
 const OrderSchema = new mongoose.Schema({
   user:{
-    type:monoose.Types.ObjectId,
+    type:mongoose.Types.ObjectId,
     ref:"Users"
   },
   orderDetails: [
     {
-      food:{type:monoose.Types.ObjectId,ref:"Foods"},
+      food:{type:mongoose.Types.ObjectId,ref:"Foods"},
       quantity:{type:Number, required:true},
       paymode:{type:String, required:true},
       status: {type:String, default:"Placed"},
@@ -20,9 +20,9 @@ const OrderSchema = new mongoose.Schema({
   orderRatings: {
     type: Number,
     required:true
+  }
   },
   {
     timeStamps:true
-  }
-});
+  });
 export const OrderModel = mongoose.model("Orders",OrderSchema);

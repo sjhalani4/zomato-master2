@@ -5,21 +5,22 @@ const MenuSchema = new mongoose.Schema({
     name:{type:String,required:true},
     items:[
       {
-        type:monoose.Type.ObjectId,
+        type:mongoose.Types.ObjectId,
         ref:"Foods"
       }
     ]
   }],
   recommended:[
     {
-      type:monoose.Type.ObjectId,
+      type:mongoose.Types.ObjectId,
       ref:"Foods",
       unique:true
     }
   ],
+},
   {
     timeStamps:true
   }
 
-});
+);
 export const MenuModel = mongoose.model("Menus",MenuSchema);
